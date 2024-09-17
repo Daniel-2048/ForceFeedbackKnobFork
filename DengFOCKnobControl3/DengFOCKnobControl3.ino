@@ -1,5 +1,5 @@
 #include "DengFOC.h"
-#define MODE 0
+#define MODE 1
 
 int motorPP = 7;
 int sensorDIR = 1;
