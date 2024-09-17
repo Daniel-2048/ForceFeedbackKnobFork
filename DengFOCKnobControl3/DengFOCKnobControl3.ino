@@ -26,7 +26,7 @@ void loop() {
 }
 
 void smoothMode() {
-  float Ksmooth = 0.06;
+  float Ksmooth = 0.052;
   DFOC_M0_setTorque(Ksmooth * DFOC_M0_Velocity());
 }
 
