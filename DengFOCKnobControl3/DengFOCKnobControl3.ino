@@ -20,5 +20,24 @@ void loop() {
 
   runFOC();
   
+  if(Mode == 0) {
+    smoothMode();
+  } else if(Mode == 1) {
+    dampMode();
+  }
 
+}
+
+void smoothMode() {
+
+  float Ksmooth = 4;
+  DFOC_M0_setTorque(Ksmooth * DFOC_M0_Velocity());
+
+}
+
+void dampMode() {
+
+  float Kdamp = 4;
+  DFOC_M0_setTorque(Kdamp * -1 * DFOC_M0_Velocity());
+      
 }
