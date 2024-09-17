@@ -1,9 +1,8 @@
 #include "DengFOC.h"
-#define _PI 3.1415926f
 #define MODE 0
 
 int motorPP = 7;
-int sensorDIR = -1;
+int sensorDIR = 1;
 
 void setup() {
 
@@ -26,13 +25,12 @@ void loop() {
 
 }
 
-float Ksmooth = 0.2;
-float Kdamp = 0.2;
-
 void smoothMode() {
+  float Ksmooth = 0.06;
   DFOC_M0_setTorque(Ksmooth * DFOC_M0_Velocity());
 }
 
 void dampMode() {
+  float Kdamp = 0.4;
   DFOC_M0_setTorque(Kdamp * -1 * DFOC_M0_Velocity());  
 }
